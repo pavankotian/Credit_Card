@@ -1,71 +1,44 @@
 # Credit Card Fraud Detection
 
-## Project Overview
-This project focuses on detecting fraudulent credit card transactions using machine learning techniques.  
-The dataset is highly imbalanced, making it a realistic and challenging classification problem.
+This project focuses on detecting fraudulent credit card transactions using machine learning techniques on a highly imbalanced real-world dataset.
 
-The goal is to correctly identify fraudulent transactions while minimizing false negatives, which is critical in real-world financial systems.
-
-
+## Objective
+To build a reliable fraud detection model that maximizes fraud recall while keeping false positives low.
 
 ## Dataset
-- Transactions: 284,807
+- Total transactions: 284,807
 - Fraud cases: 492
 - Legitimate cases: 284,315
-- No missing values 
-- Strong class imbalance (~0.17% fraud)
+- No missing values
+- Highly imbalanced classification problem
 
-
-
-## Methods Used
-- Logistic Regression
+## Techniques Used
+- Exploratory Data Analysis
+- Feature scaling with StandardScaler
+- Class imbalance handling using SMOTE
+- Logistic Regression (baseline)
 - Random Forest Classifier
-- Class Weighting
-- SMOTE (Synthetic Minority Oversampling Technique)
-- Threshold tuning
-- Precision–Recall Curve
-- ROC–AUC Curve
+- Hyperparameter tuning using RandomizedSearchCV
+- Evaluation using ROC-AUC, Precision, Recall, and Confusion Matrix
 
-
-
-## Model Evaluation Metrics
-Because accuracy is misleading for imbalanced datasets, the following metrics were emphasized:
-- Precision
-- Recall
-- F1-score
-- ROC-AUC
-
-
-
-## Key Results
-- Random Forest with SMOTE performed the best overall
-- Achieved high recall for fraud detection while maintaining strong precision
-- ROC-AUC score of ~0.96 indicates good class separability
-- Threshold tuning helped balance false positives and false negatives
-
-
+## Model Performance (Final Random Forest)
+- ROC-AUC: **0.968**
+- Fraud Precision: **~0.93**
+- Fraud Recall: **~0.82**
+- Very low false positives with strong fraud detection capability
 
 ## Key Insights
-- Handling class imbalance is more important than model choice
-- Recall is more critical than accuracy for fraud detection
-- Ensemble models outperform linear models on this dataset
-
-
-## Tools & Libraries
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Imbalanced-learn
-- Matplotlib
-
+- Handling class imbalance is critical for fraud detection
+- Random Forest significantly outperformed Logistic Regression
+- Threshold tuning allows control over fraud recall vs false positives
+- ROC-AUC proved to be the most reliable evaluation metric
 
 ## Files in This Repository
-- `Credit.ipynb` — Complete analysis and model building notebook
-- `README.md` — Project documentation
+- `Credit.ipynb` — Complete analysis and model development
+- `README.md` — Project overview and results
 
----
+## Tools & Libraries
+Python, Pandas, NumPy, Scikit-learn, Imbalanced-learn, Matplotlib, Seaborn
 
 ## Author
-**Pavan Kotian**  
-Machine Learning & Data Science Portfolio Project
+**Pavan Kotian**
