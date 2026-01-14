@@ -34,7 +34,7 @@ To build a reliable fraud detection model that maximizes fraud recall while keep
 - ROC-AUC proved to be the most reliable evaluation metric
 
 ## Files in This Repository
-- `Credit.ipynb` — Complete analysis and model development
+- `Credit_card_fraud_analysis.ipynb` — Complete analysis and model development
 - `README.md` — Project overview and results
 
 ## Tools & Libraries
