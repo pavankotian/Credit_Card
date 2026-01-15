@@ -1,98 +1,53 @@
-Credit Card Fraud Detection
-Project Overview
+## Credit Card Fraud Detection
 
-This project focuses on detecting fraudulent credit card transactions using machine learning techniques.
-Due to the highly imbalanced nature of fraud data, special attention is given to model selection, evaluation metrics, and threshold tuning rather than relying on accuracy alone.
+## Project Overview
+This project aims to detect fraudulent credit card transactions using machine learning on a highly imbalanced dataset. The focus is on maximizing fraud detection performance using appropriate evaluation metrics rather than accuracy alone.
 
-The goal is to build a practical fraud detection system that prioritizes catching fraudulent transactions while maintaining reasonable false alarm rates.
+## Objective
+To build a reliable fraud detection model that correctly identifies fraudulent transactions while handling extreme class imbalance.
 
-Objective
+## Dataset
 
-To identify fraudulent transactions accurately by handling extreme class imbalance and optimizing models using appropriate evaluation metrics such as ROC-AUC, precision, and recall.
+~284,000 transactions
 
-Dataset Summary
+~492 fraud cases (≈ 0.17%)
 
-Total transactions: ~284,000
+Numerical, PCA-transformed features
 
-Fraud cases: ~492 (≈ 0.17%)
+## Binary target: Fraud / Non-Fraud
 
-Features: PCA-transformed numerical variables + transaction amount
-
-Target: Fraud (1) vs Non-Fraud (0)
-
-Tools & Technologies
-
-Python
-
-Pandas, NumPy
-
-Scikit-learn
-
-Imbalanced-learn (SMOTE)
-
-Matplotlib / Seaborn
-
-Methodology
-1. Data Preprocessing
+## Approach
 
 Feature scaling using StandardScaler
 
-Train–test split
+Class imbalance handling using SMOTE
 
-Handling class imbalance
+## Models: Logistic Regression, Random Forest
 
-2. Models Implemented
+Hyperparameter tuning with RandomizedSearchCV
 
-Logistic Regression (baseline)
+Threshold tuning to improve fraud recall
 
-Random Forest Classifier
-
-3. Imbalance Handling Techniques
-
-Class weights
-
-SMOTE (Synthetic Minority Oversampling Technique)
-
-4. Model Optimization
-
-Hyperparameter tuning using RandomizedSearchCV
-
-ROC-AUC used as the scoring metric
-
-5. Model Evaluation
-
-Confusion Matrix
+## Evaluation Metrics
 
 Precision, Recall, F1-score
 
-ROC-AUC score
+Confusion Matrix
 
-Precision-Recall Curve
+ROC-AUC
 
-Decision threshold tuning
+Precision–Recall Curve
 
-Key Results
+## Key Results
 
-Random Forest + SMOTE significantly outperformed baseline models
+Random Forest with SMOTE achieved the best performance
 
-ROC-AUC ≈ 0.97, indicating strong ranking ability
+ROC-AUC ≈ 0.97
 
-Threshold tuning improved fraud recall
+Improved recall for fraud detection using lower decision thresholds
 
-Lower thresholds increased recall at the cost of precision — acceptable for fraud detection
+## Conclusion
+The project demonstrates the importance of imbalance handling, proper metrics, and threshold tuning when building real-world fraud detection systems.
 
-Best practical performance achieved around threshold = 0.2
-
-Final Model Choice
-
-Model: Random Forest with SMOTE
-
-Evaluation Focus: Recall, Precision, ROC-AUC
-
-Reasoning:
-In fraud detection, missing a fraudulent transaction is more costly than flagging a legitimate one.
-
-Conclusion
-
-This project demonstrates that fraud detection systems require careful metric selection and imbalance handling.
-By combining Random Forests, SMOTE, ROC-based evaluation, and threshold tuning, the final model effectively identifies fraudulent transactions in a highly imbalanced dataset.
+## Author
+Pavan Kotian
